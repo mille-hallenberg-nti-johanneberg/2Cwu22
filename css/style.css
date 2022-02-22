@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#index_container{
+    display: grid;
+    
+    grid-template-columns: 100%;
+    grid-template-rows: 10% auto;
+    
+    grid-template-areas:
+    "nv"
+    "se"
+    ;
+}
+
+#index_container_section{
+    display: grid;
+    grid-area: se;
+    
+    height: 100%;
+    
+    grid-template-columns: 70% auto;
+    grid-template-rows: auto auto 40%;
+
+    grid-template-areas: 
+    "ar1 ar1"
+    "ar2 ar2"
+    "ig as"
+    ;
+
+    padding: 5px;
+}
+
+.nav_bar{
+    grid-area: nv;
+
+    display: grid;
+    /* grid-template-columns: 50% auto; */
+    grid-template-areas: 
+    "hbm hd";
+
+    padding: 5px;
+    background-color:antiquewhite;
+}
+
+.hamburger_menu_button{
+    grid-area: hbm;
+    
+    /* height: 25%;
+    padding-top: 100%;
+    position: relative;
+ */
+    background-color: coral;
+}
+
+.box_header{
+    grid-area: hd;
+
+    background-color:oldlace;
+    /* margin: 2px; */
+
+
+}
+
+.article_1{
+    grid-area: ar1;
+    background-color:aqua;
+    /* margin-bottom: 5px; */
+}
+
+.article_2{
+    grid-area: ar2;
+    background-color:blueviolet;
+    /* margin-bottom: 5px; */
+}
+
+.box_img{
+    grid-area: ig;
+    background-color:darkkhaki;
+
+    margin:0;
+}
+
+.box_aside{
+    grid-area: as;
+    background-color: lightcoral;
+}
