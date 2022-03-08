@@ -53,6 +53,74 @@ p {
     background-color:antiquewhite;
 }
 
+#person_container{
+    display: grid;
+    
+    grid-template-columns: 100%;
+    grid-template-rows: 10% auto;
+    
+    grid-template-areas:
+    "nv"
+    "se_p"
+    ;
+}
+
+#person_container_section{
+    display: grid;
+    grid-area: se_p;
+    
+    height: 100%;
+    
+    grid-template-columns: 70% auto;
+    grid-template-rows: auto auto 40%;
+
+    grid-template-areas: 
+    "ig as"
+    "ar1 ar1"
+    ;
+
+    padding: 5px;
+}
+
+#map_container{
+    display: grid;
+    
+    grid-template-columns: 100%;
+    grid-template-rows: 10% auto;
+    
+    grid-template-areas:
+    "nv"
+    "se_m"
+    ;
+}
+
+#map_container_section{
+    display: grid;
+    grid-area: se_m;
+    
+    height: 100%;
+    
+    grid-template-columns: 100%;
+    grid-template-rows: 10% auto;
+
+    grid-template-areas: 
+    "mb"
+    "ig"
+    ;
+
+    padding: 5px;
+}
+
+#map_buttons{
+    grid-area: mb;
+
+    background-color: aliceblue;
+}
+
+#map{
+    position: absolute;
+}
+
 .hamburger_menu_button{
     grid-area: hbm;
     
@@ -68,8 +136,6 @@ p {
 
     background-color:oldlace;
     /* margin: 2px; */
-
-
 }
 
 .article_1{
