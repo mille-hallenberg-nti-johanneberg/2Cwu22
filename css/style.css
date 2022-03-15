@@ -3,7 +3,10 @@ body{
     width: 100vw;
     height: 100vh;
 
+    max-width: 100%;
+
     overflow-x:hidden;
+    /* overflow-block: hide; */
     overflow-y:hidden;
 }
 
@@ -21,6 +24,24 @@ p {
     "nv"
     "se"
     ;
+}
+
+#button{
+    width: 20%;
+    height: 80%;
+    display: flex;
+    border-radius: 1vw;
+    transition: 0.3s;
+    align-self: center;
+    align-content: center;
+    background-color: lightgrey;
+    justify-content: center;
+    /* text-align: center; */
+}
+
+#button:hover{
+    background-color: grey;
+    transform: scale(1.05);
 }
 
 #index_container_section{
@@ -46,6 +67,7 @@ p {
 
     display: grid;
     /* grid-template-columns: 50% auto; */
+    grid-template-columns: auto 70%;
     grid-template-areas: 
     "hbm hd";
 
@@ -118,12 +140,16 @@ p {
 }
 
 #map{
+    border:rgb(22, 22, 22) solid 2px;
     position: absolute;
 }
 
 .hamburger_menu_button{
     grid-area: hbm;
     
+    display: flex;
+    justify-content: space-around;
+
     /* height: 25%;
     padding-top: 100%;
     position: relative;
@@ -161,3 +187,11 @@ p {
     grid-area: as;
     background-color: lightcoral;
 }
+
+.home_page_button{
+
+}
+
+.map_page_button{
+
+}   
