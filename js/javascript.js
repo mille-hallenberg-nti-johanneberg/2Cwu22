@@ -10,7 +10,30 @@ var screen_width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 var screen_height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
 
 let body = document.getElementsByTagName("body");
-//body.width = screen_width;
+
+//Disables scrolling on desktop (Could not get it working with CSS)
+window.onscroll = function() {
+  window.scrollTo(0, 0);
+};
+
+//Disable scrolling on phone (I found this solution on this page: 
+//https://stackoverflow.com/questions/4770025/how-to-disable-scrolling-temporarily)
+
+//Disables default operation
+function preventDefault(e) {
+  e.preventDefault();
+}
+
+var supportsPassive = false;
+try {
+  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+    get: function () { supportsPassive = true; } 
+  }));
+} catch(e) {}
+
+var wheelOpt = supportsPassive ? { passive: false } : false;
+//Adds an eventListener that listens to "touchmove" and prevents the operation.
+window.addEventListener('touchmove', preventDefault, wheelOpt);
 
 //Drag on computer
 dragElement(document.getElementById("map"));
@@ -75,9 +98,23 @@ touch_drag.addEventListener("touchstart", function(ev){
 touch_drag.addEventListener("touchmove", function(ev){
     var touchLocation = ev.targetTouches[0];
     
-    touch_drag.style.left = (touchLocation.pageX + offsetX) + "px";
-    touch_drag.style.top = (touchLocation.pageY + offsetY) + "px";
-    
+    var x = touchLocation.pageX + offsetX;
+    var y = touchLocation.pageY + offsetY;
+
+    x = clampValue(x, -touch_drag.offsetWidth + parseFloat(screen.width), 0);
+    y = clampValue(y, 0, 1000);
+
+    touch_drag.style.left = x + "px";
+    touch_drag.style.top = y + "px";
+
     touch_drag_left = touch_drag.style.left;
+    //console.log(touch_drag.style.left);
     touch_drag_top = touch_drag.style.top;
 })
+
+function clampValue(variable, min, max){
+  if (variable < min) return min;
+  if (variable > max) return max;
+
+  return variable;
+}
