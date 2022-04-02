@@ -32,8 +32,14 @@ try {
 } catch(e) {}
 
 var wheelOpt = supportsPassive ? { passive: false } : false;
-//Adds an eventListener that listens to "touchmove" and prevents the operation.
-window.addEventListener('touchmove', preventDefault, wheelOpt);
+//Adds/removes an eventListener that listens to "touchmove" and prevents the operation.
+function disablePageScrolling(){
+  window.removeEventListener('touchmove', preventDefault, wheelOpt)
+}
+
+function enablePageScrolling(){
+  window.addEventListener('touchmove', preventDefault, wheelOpt);
+}
 
 //Drag on computer
 dragElement(document.getElementById("map"));
@@ -102,8 +108,8 @@ touch_drag.addEventListener("touchmove", function(ev){
     var y = touchLocation.pageY + offsetY;
 
     x = clampValue(x, -touch_drag.offsetWidth + parseFloat(screen.width), 0);
-    y = clampValue(y, 0, 1000);
-
+    y = clampValue(y, -touch_drag.offsetHeight + parseFloat(screen.height), 66);
+    console.log(touch_drag.offsetTop);
     touch_drag.style.left = x + "px";
     touch_drag.style.top = y + "px";
 
