@@ -5,20 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="map_container" scroll="no">
+<body id="map_container">
     <section class="nav_bar">
-        <nav class="square-box hamburger_menu_button">
-            <div id="button">Home</div>
-            <div id="button">Map</div>
+        <!-- Knappar för datorn -->
+        <nav class="nav_buttons">
+            <div class="button home_page_button">Hem</div>
+            <div class="button map_page_button">Släktträd</div>
         </nav>
-        <header class="box_header">Släktträd</header> 
+
+        <!-- Knappar för telefon -->
+        <i class="material-icons menu_button_open">menu</i>
+        
+        <nav class="nav_hamburger_menu">
+            <i class="material-icons menu_button_close">cancel</i>
+            <nav class="hamburger_menu_buttons">
+                <div class="button home_page_button2">Hem</div>
+                <div class="button map_page_button2">Släktträd</div>
+            </nav>
+        </nav>
+        <header class="box_header">#Släktträd</header> 
      </section>
 
      <section id="map_container_section">
          <section id="map">
-            <!-- För att skapa Children av en Parent i detta familjeträd: -->
+            <!-- En mall för att skapa ett släktträd: -->
             <!-- 
             <div class="family_tree">
                 <div class="map_node">Parent</div>
@@ -37,15 +50,15 @@
 
             <!-- Min familj -->
             <div class="family_tree">
-                <p>
+                <h1>
                     Familjen Hallenberg
-                </p>
-                
+                </h1>
+
                 <ul>
                     <li>
                         <div class="map_node">
                             <p>
-                                Mamma Hallenberg <br>
+                                Mamma Hallenberg &
                                 Pappa Hallenberg
                             </p>
                         </div>
@@ -72,7 +85,7 @@
                             </li>
 
                             <li>
-                                <div class="map_node">
+                                <div class="map_node" id="mille_hallenberg_page_button">
                                     <p>Mille Hallenberg</p>
                                 </div>
                             </li>
@@ -89,19 +102,24 @@
 
             <!-- En annan familj -->
            <div class="family_tree">
-               <ul>
+            
+            <h1>
+                Familjen Standard
+            </h1>
+
+            <ul>
                 <li>
                     <div class="map_node">
                         <p>
-                            En förälder <br>
+                            En förälder &
                             En till förälder
                         </p>
                     </div>
                     
                     <ul>
                         <li>
-                            <div class ="map_node">
-                                <p>En fet son</p>
+                            <div class ="map_node" id="adam_adamsson_page_button">
+                                <p>Adam Adamsson</p>
                             </div>
 
                             <ul>
@@ -166,6 +184,5 @@
      </section>
 
     <script src="js/javascript.js"></script>
-    
 </body>
 </html>

@@ -5,20 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Docnt</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="index_container">
-
     <section class="nav_bar">
-       <nav class="square-box hamburger_menu_button">
-       </nav>
-       <header class="box_header">HEM</header> 
+        <!-- Knappar för datorn -->
+        <nav class="nav_buttons">
+            <div class="button home_page_button">Hem</div>
+            <div class="button map_page_button">Släktträd</div>
+        </nav>
+
+        <!-- Knappar för telefon -->
+        <i class="material-icons menu_button_open">menu</i>
+        
+        <nav class="nav_hamburger_menu">
+            <i class="material-icons menu_button_close">cancel</i>
+            <nav class="hamburger_menu_buttons">
+                <div class="button home_page_button2">Hem</div>
+                <div class="button map_page_button2">Släktträd</div>
+            </nav>
+        </nav>
+
+        <!-- Header -->
+       <header class="box_header">#Släktträd</header> 
     </section>
     
     <section id="index_container_section">
         <article class="article_1">Hej och välkommen till #Släktträd! Lorem ipsum 
             dolor sit amet consectetur adipisicing elit. Placeat sed perspiciatis facilis neque asperiores saepe unde assumenda dignissimos ducimus cumque quisquam tenetur, quis voluptas, minus quas reprehenderit repellat maxime atque. 
             Deleniti molestiae reprehenderit eveniet qui dolorem, ad iusto obcaecati recusandae illo sed possimus ratione aliquam vitae veritatis fugit dolore nisi.
+            <br>
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed cupiditate, necessitatibus temporibus dolore, ipsum nam natus consequuntur repellendus rem delectus a. Veniam doloribus quis, sunt hic quam ex quisquam cum in sint fuga voluptatum ea quibusdam non, 
+            suscipit unde nulla dignissimos porro impedit accusantium, vitae incidunt qui? Nihil, ipsa doloremque.
         </article>
 
         <article class="article_2">
@@ -26,16 +46,20 @@
         </article>
 
         <!-- <p class="box_img">Detta ska vara en logga</p> -->
-        <img class = "box_img" src="img/SläktträdLogga.jpg" alt="Hemsidans Logga">
-        <aside class="box_aside">
-            Grupp Släktträd: 2022-03-25 
-            <br>
-            <br>
-            Kontakta oss för mer information.
-            <br>
-            <br>
-            0736-00 00 01
-        </aside>
+        <section class="box_section">
+            <img class = "box_img" src="img/SläktträdLogga.jpg" alt="Hemsidans Logga">
+            <p>
+                Grupp Släktträd: 2022-03-25 
+                <br>
+                <br>
+                Kontakta oss för mer information.
+                <br>
+                <br>
+                ✆: 0736-00 00 01
+            </p>
+        </section>
+        
+        
     </section>
 <script src="js/javascript.js"></script>
 </body>
